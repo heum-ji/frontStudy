@@ -7,8 +7,8 @@ class Subject extends Component {
     return (
       // Component는 하나의 최상위 태그로 시작되어야 함
       <header>
-        <h1>WEB</h1>
-        world wide web!
+        <h1>{this.props.title}</h1>
+        {this.props.sub}
       </header>
     );
   }
@@ -38,8 +38,8 @@ class Content extends Component {
   render() {
     return (
       <article>
-        <h2>HTML</h2>
-        HTML is HyperText Markup Language.
+        <h2>{this.props.title}</h2>
+        {this.props.desc}
       </article>
     );
   }
@@ -50,9 +50,13 @@ class App extends Component {
     return (
       // Create React App : JSX -> JS로 Converting 해줌
       <div className="App">
-        <Subject></Subject>
+        <Subject title="WEB" sub="world wide web!"></Subject>
+        <Subject title="React" sub="For UI"></Subject>
         <TOC></TOC>
-        <Content></Content>
+        <Content
+          title="HTML"
+          desc="HTML is HyperText Markup Language."
+        ></Content>
       </div>
     );
   }
